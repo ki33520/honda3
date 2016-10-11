@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="yes" name="apple-touch-fullscreen" />
+	<meta content="telephone=no,email=no" name="format-detection" />
+	<script type="text/javascript" src="js/flexible.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Honda</title>
+</head>
+<body>
+	<div class="page-wrap">
+		<div class="bg">
+			<div class="row logo"><img src="images/logo.png" /></div>
+			<div><img src="images/body_bg.png" /></div>
+		</div>
+		<div class="board prizeboard show">
+			<div class="row img-1"><img src="images/prize_img_1.png" /></div>
+			<div class="prize-list-wrap">
+				<ul class="prize-list">
+					<li>
+						<div class="number-bg"><img src="images/number_bg.png" /></div>
+						<div class="number" data-number="13801885020"></div>
+					</li>
+					<li>
+						<div class="number-bg"><img src="images/number_bg.png" /></div>
+						<div class="number" data-number="13801885020"></div>
+					</li>
+					<li>
+						<div class="number-bg"><img src="images/number_bg.png" /></div>
+						<div class="number" data-number="13801885020"></div>
+					</li>
+					<li>
+						<div class="number-bg"><img src="images/number_bg.png" /></div>
+						<div class="number" data-number="13801885020"></div>
+					</li>
+					<li>
+						<div class="number-bg"><img src="images/number_bg.png" /></div>
+						<div class="number" data-number="13801885020"></div>
+					</li>
+					<li>
+						<div class="number-bg"><img src="images/number_bg.png" /></div>
+						<div class="number" data-number="13801885020"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="timer"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/scroller.min.js"></script>
+	<script type="text/javascript">
+		$('.prize-list li').each(function(index,item){
+			var number = $(item).find('.number').data('number');
+				console.log(number)
+			var clockScroller=Scroller.getNewInstance({
+				width: 440,
+				amount: 110,
+				interval: 500,
+				separator:":"
+			});
+			clockScroller.appendTo($(item).find('.number')[0]);
+			clockScroller.start("00000000000");
+			console.log(clockScroller)
+			setInterval(function(){
+				clockScroller.scrollTo(number);
+			},1000);
+		});
+	</script>
+</body>
+</html>
