@@ -40,7 +40,7 @@ body{ position: relative; text-align: left; background-color: #780c17; font-fami
 
 .leaderboard .img-1{ position: absolute; width: 100%; left: 0; top: 0;}
 ul.board-list{ width: 1650px; position: absolute; left: 320px; top: 260px;}
-ul.board-list li{ float: left; width: 20%;}
+ul.board-list li{ float: left; width: 20%; height: 280px;}
 ul.board-list li .title,
 ul.board-list li .dis{ font-size: 28px; line-height: 150%; color: #fff; text-shadow: 0 0 5px #000;}
 ul.board-list li .dis{ font-size: 22px; width: 290px; padding: 10px 0;}
@@ -57,43 +57,94 @@ ul.prize-list li .number-bg img{ width: 100%; display: block;}
 ul.prize-list li .number{ position: absolute; left: 0; top: 0; width: 540px; color: #fff; font-size: 68px; line-height: 110px; text-align: center; padding: 10px 0;}
 .btn-prize{ position: absolute; background-color: #9b222b; width: 250px; height: 80px; font-size: 50px; color: #fff;  line-height: 80px; text-align: center; left: 50%; top: 60%; margin-left: -125px; }
 
-@keyframes  cardLeft {
-  0% {
-    -webkit-transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
-    transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
-    -webkit-transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: perspective(800px);
-    transform: perspective(800px);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes cardLeft {
-  0% {
-    -webkit-transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
-    transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
-    -webkit-transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: perspective(800px);
-    transform: perspective(800px);
-    opacity: 1;
-  }
-}
-.cardLeft {
-  transform-origin:center center;
-  -webkit-transform-origin:center center;
-  -webkit-animation-name: cardLeft;
-  animation-name: cardLeft;
+.flip-container {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	perspective: 1000;
+	-ms-transform: perspective(1000px);
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d; 
+	-ms-transform-style: preserve-3d; 
 }
 
+.flip-container-hover:hover .back, .flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
 
+.flip-container-hover:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
 
+.flip-container.hover .front{
+  display: none\9;
+}
+
+.flip-container, .flipper,.front, .back {
+	width: 100%;
+	height: 280px;
+}
+
+.flipper {
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-ms-transition: 0.6s;
+
+	-moz-transition: 0.6s;
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+
+	-moz-transition: 0.6s;
+	-moz-transform-style: preserve-3d;
+
+	-o-transition: 0.6s;
+	-o-transform-style: preserve-3d;
+
+	-ms-transition: 0.6s;
+	-ms-transform-style: preserve-3d;
+
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	-webkit-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	z-index: 2;
+}
+
+.back {
+	-webkit-transform: rotateY(-180deg);
+	  -moz-transform: rotateY(-180deg);
+	  -o-transform: rotateY(-180deg);
+	  -ms-transform: rotateY(-180deg);
+	  transform: rotateY(-180deg);
+}
 
 
 
