@@ -6,7 +6,6 @@
 	<meta content="yes" name="apple-touch-fullscreen" />
 	<meta content="telephone=no,email=no" name="format-detection" />
 	<script type="text/javascript" src="js/flexible.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<title>Honda</title>
@@ -23,30 +22,31 @@
 				<ul class="prize-list">
 					<li>
 						<div class="number-bg"><img src="images/number_bg.png" /></div>
-						<div class="number" data-number="13801885020"></div>
+						<div class="number"></div>
 					</li>
 					<li>
 						<div class="number-bg"><img src="images/number_bg.png" /></div>
-						<div class="number" data-number="13801885020"></div>
+						<div class="number"></div>
 					</li>
 					<li>
 						<div class="number-bg"><img src="images/number_bg.png" /></div>
-						<div class="number" data-number="13801885020"></div>
+						<div class="number"></div>
 					</li>
 					<li>
 						<div class="number-bg"><img src="images/number_bg.png" /></div>
-						<div class="number" data-number="13801885020"></div>
+						<div class="number"></div>
 					</li>
 					<li>
 						<div class="number-bg"><img src="images/number_bg.png" /></div>
-						<div class="number" data-number="13801885020"></div>
+						<div class="number"></div>
 					</li>
 					<li>
 						<div class="number-bg"><img src="images/number_bg.png" /></div>
-						<div class="number" data-number="13801885020"></div>
+						<div class="number"></div>
 					</li>
 				</ul>
 			</div>
+			<div class="btn-prize">抽奖</div>
 		</div>
 	</div>
 	<div class="timer"></div>
@@ -54,22 +54,24 @@
 	<script type="text/javascript" src="js/underscore.js"></script>
 	<script type="text/javascript" src="js/scroller.min.js"></script>
 	<script type="text/javascript">
+		var scrollerArr = [];
 		$('.prize-list li').each(function(index,item){
 			var number = $(item).find('.number').data('number');
-				console.log(number)
 			var clockScroller=Scroller.getNewInstance({
 				width: 440,
 				amount: 110,
-				interval: 500,
-				separator:":"
+				interval: 500
 			});
 			clockScroller.appendTo($(item).find('.number')[0]);
 			clockScroller.start("00000000000");
-			console.log(clockScroller)
-			setInterval(function(){
-				clockScroller.scrollTo(number);
-			},1000);
+			scrollerArr.push(clockScroller);
 		});
+		$('.btn-prize').on('click',function(){
+			$('.prize-list li').each(function(index,item){
+				scrollerArr[index].scrollTo("13801885020");
+			});
+		})
+		
 	</script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 @charset "utf-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,input,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;-webkit-background-origin:content-box;background-origin:content-box;}section,header,footer,nav{display:block;margin:0;padding:0}ol,ul{list-style:none}blockquote,q{quotes:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}img{border:0;font-size:0}a{text-decoration:none;}
+.cf:before,.cf:after{content:"";display:table}.cf:after{clear:both}.cf{*zoom:1}
 html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
 html,body{font-family:sans-serif}
@@ -53,8 +55,42 @@ ul.prize-list li{ float: left; width: 584px; position: relative; padding-bottom:
 ul.prize-list li .number-bg{ width: 540px;}
 ul.prize-list li .number-bg img{ width: 100%; display: block;}
 ul.prize-list li .number{ position: absolute; left: 0; top: 0; width: 540px; color: #fff; font-size: 68px; line-height: 110px; text-align: center; padding: 10px 0;}
+.btn-prize{ position: absolute; background-color: #9b222b; width: 250px; height: 80px; font-size: 50px; color: #fff;  line-height: 80px; text-align: center; left: 50%; top: 60%; margin-left: -125px; }
 
-
+@keyframes  cardLeft {
+  0% {
+    -webkit-transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
+    transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: perspective(800px);
+    transform: perspective(800px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes cardLeft {
+  0% {
+    -webkit-transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
+    transform: perspective(800px) rotate3d(0, 1, 0, -90deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: perspective(800px);
+    transform: perspective(800px);
+    opacity: 1;
+  }
+}
+.cardLeft {
+  transform-origin:center center;
+  -webkit-transform-origin:center center;
+  -webkit-animation-name: cardLeft;
+  animation-name: cardLeft;
+}
 
 
 
