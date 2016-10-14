@@ -55,7 +55,7 @@ ul.prize-list li{ float: left; width: 584px; position: relative; padding-bottom:
 ul.prize-list li .number-bg{ width: 540px;}
 ul.prize-list li .number-bg img{ width: 100%; display: block;}
 ul.prize-list li .number{ position: absolute; left: 0; top: 0; width: 540px; color: #fff; font-size: 68px; line-height: 110px; text-align: center; padding: 10px 0;}
-.btn-prize{ position: absolute; background-color: #9b222b; width: 250px; height: 80px; font-size: 50px; color: #fff;  line-height: 80px; text-align: center; left: 50%; top: 60%; margin-left: -125px; }
+.btn-prize{ position: absolute; background-color: #9b222b; width: 250px; height: 80px; font-size: 50px; color: #fff;  line-height: 80px; text-align: center; left: 50%; top: 60%; margin-left: -125px; cursor: pointer; box-shadow: 0 5px 15px #000;}
 
 .flip-container {
 	-webkit-perspective: 1000;

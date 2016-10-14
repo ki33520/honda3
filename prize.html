@@ -66,10 +66,34 @@
 			clockScroller.start("00000000000");
 			scrollerArr.push(clockScroller);
 		});
+		var indexUrl = 'http://honda10emc.dzhcn.cn/',
+			ajaxUrl = indexUrl+'callback.php',
+			ajaxActive = false,
+			ajaxType = 'win';
 		$('.btn-prize').on('click',function(){
-			$('.prize-list li').each(function(index,item){
-				scrollerArr[index].scrollTo("13801885020");
-			});
+			if(!ajaxActive){
+				ajaxActive = true;
+				$.ajax({
+					url: ajaxUrl,
+					type: "post",
+					data: {type: ajaxType},
+					dataType: "json",
+					error: function(request){
+						console.log(request);
+					},
+					success: function(data){
+						if(data.status === 1){
+							var mobiles = data.win_mobile;
+							$('.prize-list li').each(function(index,item){
+								scrollerArr[index].scrollTo(mobiles[index]);
+							});
+						}else{
+							console.log(data)
+						}
+						ajaxActive = false;
+					}
+				});
+			}
 		})
 		
 	</script>
