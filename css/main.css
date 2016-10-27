@@ -40,14 +40,15 @@ body{ position: relative; text-align: left; background-color: #780c17; font-fami
 
 .leaderboard .img-1{ position: absolute; width: 100%; left: 0; top: 0;}
 ul.board-list{ width: 1650px; position: absolute; left: 320px; top: 260px;}
-ul.board-list li{ float: left; width: 20%; height: 280px;}
+ul.board-list li{ float: left; width: 20%; height: 310px;}
 ul.board-list li .title,
 ul.board-list li .dis{ font-size: 28px; line-height: 150%; color: #fff; text-shadow: 0 0 5px #000;}
 ul.board-list li .dis{ font-size: 22px; width: 290px; padding: 10px 0;}
+ul.board-list li .dis .name{ height: 32px; overflow: hidden; text-overflow: ellipsis;}
 ul.board-list li .img{ width: 287px; height: 182px; position: relative; overflow: hidden;}
 ul.board-list li .img .img-cover{ position: absolute; left: 0; top: 0;}
 ul.board-list li .img img{ width: 100%; display: block;}
-ul.board-list li .img .img-wrap{ width: 266px; margin: 11px auto; border-radius: 0 0 15px 0; overflow: hidden;}
+ul.board-list li .img .img-wrap{ width: 266px; height: 165px; margin: 11px auto; border-radius: 0 0 15px 0; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat;}
 ul.board-list li .img .img-wrap img{ height: 165px;}
 
 ul.prize-list{ width: 1752px; position: absolute; left: 262px; top: 393px;}

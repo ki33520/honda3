@@ -62,9 +62,7 @@ function refreshTen(){
 			if(data.status === 1){
 				var list_data = data.data;
 				$(list_data).each(function(index,item){
-					var list_node = _.find(window.worksList, function(node){ return node.name == item.Name; });
-					var img = list_node && list_node.img ? list_node.img : '';
-					var li_inner = $('<div data-name="'+item.Name+'"><div class="title">第'+item.rowno+'名</div><div class="img"><div class="img-cover"><img src="images/img_cover.png" /></div><div class="img-wrap"><img src='+img+' /></div></div><div class="cf dis"><div class="left">得票率：'+item.vote+'</div><div class="right">'+item.Name+'车队</div></div></div>');
+					var li_inner = $('<div data-name="'+item.Name+'"><div class="title">第'+item.rowno+'名</div><div class="img"><div class="img-cover"><img src="images/img_cover.png" /></div><div class="img-wrap" style="background-image:url(http://honda10emc.dzhcn.cn/design/images/'+item.id+'.jpg)"></div></div><div class="cf dis"><div class="name">'+item.Name+'车队</div><div class="vote">得票数：'+item.vote+'</div></div></div>');
 
 					boardList.find('li .back').eq(index).html(li_inner);
 					boardList.find('li .inner').eq(index).removeClass('hover');
